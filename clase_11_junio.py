@@ -41,3 +41,5 @@ if (mesNacimiento >0 and mesNacimiento<13):
         print("aun eres un mocoso")
 else:
     print("menso son solo 12 meses")
+
+print("fin del programa hacer la mimision")
