@@ -7,15 +7,15 @@
 
 
 numero = int(input("ingrese un numero: "))
-"""
+
 #triangulo rectangulo
 for i in range(numero):
     print('*' * i)
 print("fin del programa")
 
-"""
 
 #flecha 
+"""
 if(numero >0 and numero < 6):
 
     for i in range(numero):
@@ -31,3 +31,5 @@ if(numero >0 and numero < 6):
       #  print("    *     \n   * *    \n  *   *  \n *     * \n***   *** \n  *   *  \n  *   *  \n  *****  \n",end="    ")
 else:
     print("fin del programa")
+
+    """
