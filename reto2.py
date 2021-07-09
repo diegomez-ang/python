@@ -1,12 +1,13 @@
 #programa velocidad
-
 distSeparacion, recordActual, tiempo = input().split()
 
-distSeparacion = int(distSeparacion)
-recordActual = int(recordActual)
-tiempo = int(tiempo)
+distSeparacion = float(distSeparacion)
+recordActual = float(recordActual)
+tiempo = float(tiempo)
 
 velocidad = distSeparacion/tiempo
+
+
 
 if(velocidad < recordActual):
     print("VELOCIDAD NORMAL")
