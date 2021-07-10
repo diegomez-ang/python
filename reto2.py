@@ -1,17 +1,17 @@
-#programa velocidad
+distanciaMetros, velocidadMaxima, tiempo = input().split(' ') 
+distanciaMetros = float(distanciaMetros)
+velocidadMaxima = float(velocidadMaxima)
+tiempo = float(tiempo)
 
-distSeparacion, recordActual, tiempo = input().split()
-
-distSeparacion = int(distSeparacion)
-recordActual = int(recordActual)
-tiempo = int(tiempo)
-
-velocidad = distSeparacion/tiempo
-
-if(velocidad < recordActual):
-    print("VELOCIDAD NORMAL")
-elif(velocidad > recordActual):
-    print("NUEVO RECORD")
-elif(velocidad > recordActual + (recordActual*0.25)):
-    print("ENTREVISTA")
-    
+if distanciaMetros>=0 and velocidadMaxima>=0 and tiempo>0:
+    velocidadMedia = distanciaMetros/tiempo
+    velMaxSegundos = velocidadMaxima*1000/3600
+    record=velMaxSegundos+(velMaxSegundos*0.25)
+    if velocidadMedia<=velMaxSegundos:
+        print('VELOCIDAD NORMAL')
+    elif velocidadMedia<record:
+        print('NUEVO RECORD')
+    else:
+        print('ENTREVISTA')
+else:
+    print('VALORES NEGATIVOS')
