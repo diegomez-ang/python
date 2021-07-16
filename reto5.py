@@ -7,7 +7,7 @@
 
 def agregar():
     if items[0] in productos:
-        print('error')
+        return False
     else :
         key = items[0]
         items.pop(0)
@@ -15,7 +15,7 @@ def agregar():
 
 def actualizar():
     if items[0] not in productos:
-        print('error')
+        return False
     else:
         key = items[0]
         items.pop(0)
@@ -23,20 +23,22 @@ def actualizar():
 
 def eliminar():
     if items[0] not in productos:
-        print('error')
+        return False
     else:
         key=items[0]
         productos.pop(key)
+
 def promedio():
     suma=0
     for i in productos.values():
         suma+=i[1]
     prom= round(suma/len(productos),1)
     return prom
+
 def inventario():
+    total = 0
     for i in productos.values():
-        total=i[1]*i[2]
-    
+        total+=(i[1]*i[2])    
     return total
 def mayor():
     mayor=0
@@ -53,9 +55,6 @@ def menor():
             nombreMenor = i[0]
     return nombreMenor
 
-
-
-
 productos = {
     1:['Tangelos', 9000.0, 67],
     2:['Limones', 2500.0, 35],
@@ -69,21 +68,21 @@ productos = {
     10:['Jamon', 11000.0, 55]
 }
 
-operacion = input('que operacion va a realizar: ').upper()
+operacion = input().upper()
 items = input().split()
 items[0] = int(items[0])
 items[2] = float(items[2])
 items[3] = int (items[3])
 
-#definir funciones
-
 if operacion == 'AGREGAR':
-   con = agregar()
+   flag = agregar()
 elif operacion == 'ACTUALIZAR':
-    con = actualizar()
-elif operacion == 'ELIMINAR':
-    con = eliminar()
+    flag = actualizar()
+elif operacion == 'BORRAR':
+    flag = eliminar()
 
-
-print(mayor(), menor(), promedio(), inventario())
+if flag == False:
+    print('ERROR')
+else:
+    print(mayor(), menor(), promedio(), inventario())
 
